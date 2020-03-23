@@ -2,8 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{username}
-  h2 This is an engine for Automative image donwload.
+  
 
-  a(href="http://google.com" target="_blank")
-    button(type="button" class="btn-primary") Status  
+  if newRecords
+      ul(style="width: auto;").list-group
+          for rec in newRecords
+              li.list-group-item= rec.url
+                span.badge.badge-primary.badge-pill.right
+                a(href=rec.url download='' target="_blank")
+                    button.btn.btn-primary.float-right(type='button') Download
