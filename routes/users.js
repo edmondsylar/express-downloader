@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     if(err) throw err
 
     var data = rows;
-    console.log(data);
+    // console.log(data);
     res.render('users', { title: 'New url\'s', username: name, newRecords: data });
   });
 
